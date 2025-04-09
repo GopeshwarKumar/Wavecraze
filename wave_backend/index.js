@@ -5,6 +5,7 @@ const env=require("dotenv")
 env.config()
 const userdata=require('./models/eventregistration')
 const glamItUpUser=require('./models/glamitUpModels')
+const responsedata=require("./models/eventResponse")
 
 const app = express()
 
@@ -43,6 +44,18 @@ app.post("/glamregister" ,async (req, res) => {
         res.send({"message":"data saved"})
     }).catch(err =>{
         console.log(err)
+    })
+})
+
+// response from audience
+app.post("/response", async (req,res)=>{
+    const existeduser=await responsedata.findOne({"email":req.body.email})
+    if(existeduser){
+        return res.send({message:"response already sent Thank You ❤️"})
+    }
+    const respons=await responsedata(req.body)
+    await respons.save().then(ress =>{
+        res.send({"message":"Response sent Thank You ❤️"})
     })
 })
 
