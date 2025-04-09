@@ -1,6 +1,6 @@
 const mongoose =require("mongoose");
 
-mongoose.createConnection("mongodb://localhost:27017/glamitUp")
+mongoose.createConnection("mongodb+srv://gopeshwarkumark:QWWwPOKNVtFyKKNC@wavecraze.i9lkgcv.mongodb.net/glamitUp")
 
 const glamschema=mongoose.Schema({
     name:{
@@ -10,6 +10,15 @@ const glamschema=mongoose.Schema({
         type:String
     },
     email:{
+        type:String
+    },
+    year:{
+        type:String
+    },
+    Department:{
+        type:String
+    },
+    rollNo:{
         type:String
     },
     event:{
