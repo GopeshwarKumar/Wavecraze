@@ -26,7 +26,7 @@ app.post("/eventregister" ,async (req, res) => {
     }
     const user= userdata(req.body)
     await user.save().then(ree =>{
-        res.send("data saved")
+        res.send({message:"Registered for Talent-X"})
     }).catch(err =>{
         console.log(err)
     })
@@ -41,7 +41,7 @@ app.post("/glamregister" ,async (req, res) => {
     }
     const user= glamItUpUser(req.body)
     await user.save().then(ree =>{
-        res.send({"message":"data saved"})
+        res.send({"message":"Registerd for GlamIt Up"})
     }).catch(err =>{
         console.log(err)
     })
@@ -53,6 +53,7 @@ app.post("/response", async (req,res)=>{
     if(existeduser){
         return res.send({message:"response already sent Thank You ❤️"})
     }
+    console.log(req.body)
     const respons=await responsedata(req.body)
     await respons.save().then(ress =>{
         res.send({"message":"Response sent Thank You ❤️"})
