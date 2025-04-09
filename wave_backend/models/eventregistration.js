@@ -1,6 +1,8 @@
 const mongoose =require("mongoose");
 
-mongoose.connect("mongodb://localhost:27017/wavecraze")
+mongoose.connect("mongodb+srv://gopeshwarkumark:QWWwPOKNVtFyKKNC@wavecraze.i9lkgcv.mongodb.net/wavecraze").then(ree =>{
+    console.log("db connected")
+})
 
 const eventschema=mongoose.Schema({
     name:{
@@ -10,6 +12,15 @@ const eventschema=mongoose.Schema({
         type:String
     },
     email:{
+        type:String
+    },
+    year:{
+        type:String
+    },
+    Department:{
+        type:String
+    },
+    roll:{
         type:String
     },
     event:{
