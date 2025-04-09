@@ -2,6 +2,8 @@ const mongoose =require("mongoose");
 
 mongoose.connect("mongodb+srv://gopeshwarkumark:QWWwPOKNVtFyKKNC@wavecraze.i9lkgcv.mongodb.net/wavecraze").then(ree =>{
     console.log("db connected")
+}).catch(err =>{
+    console.log("db connection error")
 })
 
 const eventschema=mongoose.Schema({
