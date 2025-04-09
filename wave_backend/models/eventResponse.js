@@ -1,6 +1,6 @@
 const mongoose =require("mongoose")
 
-mongoose.createConnection("mongodb://localhost:27017/response")
+mongoose.createConnection("mongodb+srv://gopeshwarkumark:QWWwPOKNVtFyKKNC@wavecraze.i9lkgcv.mongodb.net/response")
 
 const responseSchema=mongoose.Schema({
     name:{
